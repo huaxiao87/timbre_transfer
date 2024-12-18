@@ -18,14 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Sound of DAFx
-email: firstname.lastname@aalto.fi
+title: Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
+email: gregorio.giudici@unitn.it
 description: >- # this means to ignore newlines until "baseurl:"
   This is the example accompanying repository for the Sound of DAFx special issue.
-baseurl: "/ShoeboxEnergyDecay" # the subpath of your site, e.g. /blog
+baseurl: "/DistillingDDSP_SoundOfDAFx" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-github_username:  SebastianJiroSchlecht
+github_username:  gregogiudici
 
 # Build settings
 theme: jekyll-theme-minimal
