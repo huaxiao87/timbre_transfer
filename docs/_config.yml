@@ -24,7 +24,7 @@ email: gregorio.giudici@unitn.it
 description: >-
   This is the example accompanying repository for the Sound of DAFx special issue.
 baseurl: "/DistillingDDSP_SoundOfDAFx" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: null # the base hostname & protocol for your site, e.g. http://example.com
 
 github_username: gregogiudici
 
