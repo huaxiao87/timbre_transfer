@@ -1,4 +1,4 @@
-# SoundOfDAFx
-Example project for Sound of DAFx Special Issue
+# Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
+by G.A. Giudici, F. Caspe, L. Gabrielli, S. Squartini, and L. Turchet
 
-The accompanying page with the sound examples can be found [here](https://sebastianjiroschlecht.github.io/SoundOfDAFx/).
+Additional material can be found [here](https://gregogiudici.github.io/DistillingDDSP_SoundOfDAFx/docs/).
