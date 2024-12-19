@@ -27,29 +27,29 @@
 ### Example 1
 
 <audio controls>
-  <source src="{{ site.baseurl}}/docs/examples/sounds/ism.wav" type="audio/ogg">
-  <source src="{{ site.baseurl}}/docs/examples/sounds/ism.wav" type="audio/mpeg">
+  <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/ogg">
+  <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
   Your browser does not support the audio tag. 
 </audio>
 
-<img src="{{ site.baseurl}}/docs/examples/images/Fig9a.png" alt="Spectrgrom of ISM" style="height: 200px; width:600px;"/>
+<img src="{{ site.baseurl}}/examples/images/Fig9a.png" alt="Spectrgrom of ISM" style="height: 200px; width:600px;"/>
 
 ### Example 2
 
 <audio controls>
-  <source src="{{ site.baseurl}}/docs/examples/sounds/stochastic.wav" type="audio/ogg">
-  <source src="{{ site.baseurl}}/docs/examples/sounds/stochastic.wav" type="audio/mpeg">
+  <source src="{{ site.baseurl}}/examples/sounds/stochastic.wav" type="audio/ogg">
+  <source src="{{ site.baseurl}}/examples/sounds/stochastic.wav" type="audio/mpeg">
   Your browser does not support the audio tag. 
 </audio>
 
-<img src="{{ site.baseurl}}/docs/examples/images/Fig9b.png" alt="Spectrgrom of ISM" style="height: 200px; width:600px;"/>
+<img src="{{ site.baseurl}}/examples/images/Fig9b.png" alt="Spectrgrom of ISM" style="height: 200px; width:600px;"/>
 
 
 ### Example 3
 
 <audio controls>
-  <source src="{{ site.baseurl}}/docs/examples/sounds/combined.wav" type="audio/ogg">
-  <source src="{{ site.baseurl}}/docs/examples/sounds/combined.wav" type="audio/mpeg">
+  <source src="{{ site.baseurl}}/examples/sounds/combined.wav" type="audio/ogg">
+  <source src="{{ site.baseurl}}/examples/sounds/combined.wav" type="audio/mpeg">
   Your browser does not support the audio tag. 
 </audio>
 
