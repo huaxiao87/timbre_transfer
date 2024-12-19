@@ -5,7 +5,7 @@ ______________________________________________________________________
 # Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
 ### Gregorio Andrea Giudici - Franco Caspe - Leonardo Gabrielli - Stefano Squartini - Luca Turchet
 
-<span style="font-size:2rem;font-weight:bold;"> [>>website<<](https://gregogiudici.github.io/distilling-ddsp)</span><br> 
+<b style="font-size:2rem;font-weight:bold;"> [>>website<<](https://gregogiudici.github.io/distilling-ddsp)</b><br> 
 <i style="font-size:1rem;font-weight:bold;">(with audio samples and more)</i>
 
 <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
