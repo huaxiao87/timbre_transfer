@@ -53,5 +53,5 @@
   Your browser does not support the audio tag. 
 </audio>
 
-<img src="{{ site.baseurl}}/docs/examples/images/Fig9c.png" alt="Spectrgrom of ISM" style="height: 200px; width:600px;"/>
+<img src="{{ site.baseurl}}/examples/images/Fig9c.png" alt="Spectrgrom of ISM" style="height: 200px; width:600px;"/>
 
