@@ -1,0 +1,15 @@
+{
+    "decoder": {
+      "hidden_size": 16,
+      "num_layers": 1,
+      "input_keys": ["f0_scaled", "loudness_scaled"],
+      "input_sizes": [1, 1],
+      "output_keys": ["amplitude", "harmonic_distribution", "noise_bands"],
+      "output_sizes": [1, 100, 65]
+    },
+    "synth": {
+      "sample_rate": 16000,
+      "block_size": 64,
+      "reverb_scale": 1
+    }
+  }

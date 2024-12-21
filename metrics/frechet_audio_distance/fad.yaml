@@ -1,0 +1,45 @@
+# Example of configuration to compute the Frechet Audio Distance (FAD) between two sets of audio files using VGGish or EnCodec embeddings.
+# Modify the following parameters according to your needs:
+# - model_cfg: path to the model configuration file
+# - checkpoint_path: path to the model checkpoint
+# - dataset: path to the dataset
+# - output_path: path to the output folder
+# - output_file: path to the output file to save the FAD values
+# - device: device to use for the computation
+# - mode: ['vggish', 'encodec', 'both'] to use VGGish and/or EnCodec embeddings (default: 'both')
+
+# Change the model_cfg to the path of the model configuration file
+# (default: Full HpN DDSP model)
+model_cfg: ${oc.env:CONFIG_FULL_HPN}
+
+# Path to model checkpoint
+checkpoint_path: ${oc.env:FULL_HPN_FLUTE}
+
+# Path to the dataset
+dataset: ${oc.env:FLUTE_DATASET}
+
+# Output path
+output_path: "${oc.env:FAD_DIR}/flute/full_hpn_flute"
+
+# Output file
+output_file: "${oc.env:FAD_DIR}/vggish_hpn_piano_fad.csv"
+
+# Device
+device: 'cuda:0'
+
+# Model for the embeddings used in the FAD (default: 'both')
+mode: 'both'
+
+# Remove generated wav files (default: True) to save disk space
+remove_tree: True
+
+# Configuration for Hydra (https://hydra.cc/docs/intro)
+defaults:  
+  - _self_  
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+  
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .

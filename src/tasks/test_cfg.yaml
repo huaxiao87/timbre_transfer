@@ -1,0 +1,64 @@
+model:
+  _target_: src.models.ddsp_decoder.DDSP_Autoencoder
+  encoder:
+    _target_: src.models.decoder.encoders.Zencoder
+    hidden_size: 512
+    z_size: 16
+  decoder:
+    _target_: src.models.decoder.hpn_decoder.HpNdecoder
+    hidden_size: 512
+    num_layers: 1
+    input_keys: ['f0_scaled','loudness_scaled', 'z']
+    input_sizes: [1,1,16]
+    output_keys: ['amplitude','harmonic_distribution','noise_bands']
+    output_sizes: [1,100,65]
+  synth:
+    _target_: src.models.synths.hpn_synth.HpNsynth
+    sample_rate: 16000
+    block_size: 64
+    reverb_scale: 1
+
+rec_loss:
+  _target_: torch.nn.L1Loss
+  reduction: 'mean'
+
+
+optimizer:
+  _target_: torch.optim.Adam
+  lr: 1e-3
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.StepLR
+  step_size: 1000
+  gamma: 0.5
+
+
+distillation:
+  kd_config: ["audio", "params"]
+  teacher_cfg:
+    model:
+      _target_: src.models.ddsp_decoder.DDSP_Decoder
+      decoder:
+        _target_: src.models.decoder.hpn_decoder.HpNdecoder
+        hidden_size: 512
+        num_layers: 1
+        input_keys: ['f0_scaled','loudness_scaled']
+        input_sizes: [1,1]
+        output_keys: ['amplitude','harmonic_distribution','noise_bands']
+        output_sizes: [1,100,65]
+
+      synth: 
+        _target_: src.models.synths.hpn_synth.HpNsynth
+        sample_rate: 16000
+        block_size: 64
+
+  audio_loss: 
+    _target_: torch.nn.L1Loss
+    reduction: 'mean'
+  params_loss:
+    _target_: torch.nn.L1Loss
+    reduction: 'mean'
+  w_params: 0.3
+  w_rec: 0.4
+  w_audio: 0.3
+  

@@ -1,0 +1,19 @@
+{
+    "decoder": {
+      "n_blocks": 3,
+      "hidden_channels": 64,
+      "out_channels": 6,
+      "kernel_size": 3,
+      "dilation_base": 2,
+      "apply_padding": true,
+      "deploy_residual": true,
+      "input_keys": ["f0_scaled", "loudness_scaled"]
+    },
+    "synth": {
+      "sample_rate": 16000,
+      "block_size": 64,
+      "max_ol": 0.32,
+      "fr": [1, 1, 1, 2, 2, 1.5],
+      "synth_module": "fmflute"
+    }  
+}
