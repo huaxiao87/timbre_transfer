@@ -1,7 +1,8 @@
 # Jekyll Configuration for Distilling DDSP Supplemental Page
 
 # General settings
-title: Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
+title: >-
+    Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
 email: gregorio.giudici@unitn.it
 description: >-
   Supplemental materials for the paper "Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems," showcasing audio examples, spectrograms, and comparative visualizations.
