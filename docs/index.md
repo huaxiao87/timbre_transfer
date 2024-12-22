@@ -32,13 +32,13 @@
   <tr>
     <td>🪈 Flute</td>
     <td>
-      <audio controls>
+      <audio controls style="width: 150px; height: 30px;">
         <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
-      <audio controls>
+      <audio controls style="width: 150px; height: 30px;">
         <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
@@ -47,13 +47,13 @@
   <tr>
     <td>🎺 Trumpet</td>
     <td>
-      <audio controls>
+      <audio controls style="width: 150px; height: 30px;">
         <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
-      <audio controls>
+      <audio controls style="width: 150px; height: 30px;">
         <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
@@ -62,13 +62,13 @@
   <tr>
     <td>🎻 Violin</td>
     <td>
-      <audio controls>
+      <audio controls style="width: 150px; height: 30px;">
         <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
-      <audio controls>
+      <audio controls style="width: 150px; height: 30px;">
         <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
@@ -77,13 +77,13 @@
   <tr>
     <td>🎹 Piano</td>
     <td>
-      <audio controls>
+      <audio controls style="width: 150px; height: 30px;">
         <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
-      <audio controls>
+      <audio controls style="width: 150px; height: 30px;">
         <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
@@ -102,31 +102,31 @@
   </tr>
   <tr>
     <td style="text-align: center;">Full</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_full_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_full_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_full_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_full_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_full_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_full_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_full_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_full_hp.wav" type="audio/mpeg"></audio></td>
   </tr>
   <tr>
     <td style="text-align: center;">Reduced</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_hp.wav" type="audio/mpeg"></audio></td>
   </tr>
   <tr>
     <td style="text-align: center;">Reduced + AD</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
   </tr>
   <tr>
     <td style="text-align: center;">Reduced + CD</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
   </tr>
 </table>
 
@@ -141,31 +141,31 @@
   </tr>
   <tr>
     <td style="text-align: center;">Full</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_full_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_full_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_full_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_full_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_full_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_full_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_full_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_full_ddx7.wav" type="audio/mpeg"></audio></td>
   </tr>
   <tr>
     <td style="text-align: center;">Reduced</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
   </tr>
   <tr>
     <td style="text-align: center;">Reduced + AD</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
   </tr>
   <tr>
     <td style="text-align: center;">Reduced + CD</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
   </tr>
 </table>
 
@@ -180,38 +180,38 @@
   </tr>
   <tr>
     <td style="text-align: center;">Full</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_full_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_full_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_full_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_full_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_full_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_full_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_full_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_full_wt.wav" type="audio/mpeg"></audio></td>
   </tr>
   <tr>
     <td style="text-align: center;">Reduced</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_wt.wav" type="audio/mpeg"></audio></td>
   </tr>
   <tr>
     <td style="text-align: center;">Reduced + AD</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
   </tr>
   <tr>
     <td style="text-align: center;">Reduced + CD</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
   </tr>
   <tr>
     <td style="text-align: center;">Reduced w/ Prt + CD</td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
+    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
   </tr>
 </table>
 
