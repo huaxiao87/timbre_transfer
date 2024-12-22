@@ -1,0 +1,8 @@
+distill_audio:
+  _target_: src.distillation.distillation_methods.DistillAudio
+  loss:  
+     _target_: src.losses.loss_functions.rec_loss
+     scales: [2048, 1024, 512, 256, 128, 64]
+     overlap: 0.75
+  w: 0.5
+  w_trainable: False

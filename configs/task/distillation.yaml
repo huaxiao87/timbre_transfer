@@ -1,0 +1,29 @@
+_target_: src.tasks.knowledge_distillation.DistillationModule
+w_rec: 0.5
+rec_loss:
+     _target_: src.losses.loss_functions.rec_loss
+     scales: [2048, 1024, 512, 256, 128, 64]
+     overlap: 0.75
+
+optimizer:
+     _target_: torch.optim.AdamW
+     _partial_: True
+     lr: 0.001
+     weight_decay: 0.01
+
+scheduler:
+     _target_: torch.optim.lr_scheduler.ExponentialLR
+     _partial_: True
+     gamma: 0.98
+     verbose: True
+
+# model
+teacher:
+     config_path: ${env.FULL_HPN_CONFIG}
+    # Best wavetable flute
+     ckpt_path: ${oc.env:FULL_HPN_FLUTE}
+
+copy_wavetables: False
+train_wavetables: True
+copy_reverb: False
+train_reverb: True

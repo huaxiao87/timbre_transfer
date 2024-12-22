@@ -4,10 +4,9 @@ from src.models.synths.hpn_synth import exp_sigmoid
 
 class DistillMethod(nn.Module):
     """Base class for distillation methods."""
-    def __init__(self, loss, w, w_trainable=False):
+    def __init__(self, loss, w):
         super(DistillMethod, self).__init__()
         self.loss = loss
-        #self.w = nn.Parameter(torch.tensor(w), requires_grad=w_trainable)
         self.w = w
         
     def init_distillation(self, teacher, student):
@@ -22,8 +21,8 @@ class DistillMethod(nn.Module):
 class DistillAudio(DistillMethod):
     """Response-based distillation: audio."""
         
-    def __init__(self, loss, w, w_trainable=False):
-        super(DistillAudio, self).__init__(loss, w, w_trainable)
+    def __init__(self, loss, w):
+        super(DistillAudio, self).__init__(loss, w)
         
     def init_distillation(self, teacher, student):
         assert teacher.get_sr() == student.get_sr(), "Sample rates must be the same for teacher and student models"
@@ -34,37 +33,37 @@ class DistillAudio(DistillMethod):
         return self.w * loss['audio'], loss
     
     
-class DistillParams(DistillMethod):
+class DistillControl(DistillMethod):
     """Response-based distillation (only for DDSP models): parameters."""
-    def __init__(self, params, loss, w, mode='sum' , w_trainable=False, scale_fn=exp_sigmoid):
-        super(DistillParams, self).__init__(loss, w, w_trainable)
+    def __init__(self, params, loss, w, mode='sum', scale_fn=exp_sigmoid):
+        super(DistillControl, self).__init__(loss, w)
         assert mode in ['mean', 'sum'], "mode must be either 'mean' or 'sum'"
         self.mode = mode
         self.params = params
         self.scale_fn = scale_fn
 
     def init_distillation(self, teacher, student):
-        assert type(teacher).__name__ == 'DDSP_Decoder' and type(student).__name__ == "DDSP_Decoder", f"For Params Distillation teacher model and student model must be a DDSP_Decoder, but got teacher: {type(teacher).__name__} and student: {type(student).__name__}"
+        assert type(teacher).__name__ == 'DDSP_Decoder' and type(student).__name__ == "DDSP_Decoder", f"For Control Distillation teacher model and student model must be a DDSP_Decoder, but got teacher: {type(teacher).__name__} and student: {type(student).__name__}"
         assert teacher.get_params() == student.get_params(), f"Output keys must be the same for teacher {teacher.get_params()} and student models {student.get_params()}"
         assert self.params == teacher.get_params(), f"Distillation params {self.params} must correspond to the output keys of the DDSP models {teacher.get_params()}"
 
     def forward(self, y_t, y_s):
         loss = {}
-        p_loss = 0.
+        c_loss = 0.
         for param in self.params:
             loss[param] = self.loss(self.scale_fn(y_t[param]), self.scale_fn(y_s[param]))
 
         if self.mode == 'mean':
-            p_loss = torch.stack(list(loss.values())).mean()
+            c_loss = torch.stack(list(loss.values())).mean()
         else:
-            p_loss = torch.stack(list(loss.values())).sum()
+            c_loss = torch.stack(list(loss.values())).sum()
 
-        return self.w * p_loss, loss
+        return self.w * c_loss, loss
     
 class DistillFeatures(DistillMethod):
     """Feature-based distillation."""
-    def __init__(self, hook_layers, align_features, loss, w, mode='mean', w_trainable=False):
-        super(DistillFeatures, self).__init__(loss, w, w_trainable)
+    def __init__(self, hook_layers, align_features, loss, w, mode='mean'):
+        super(DistillFeatures, self).__init__(loss, w)
         assert mode in ['mean', 'sum'], "mode must be either 'mean' or 'sum'"
         self.mode = mode
         self.teacher_features = {}
@@ -168,8 +167,8 @@ class DistillFeatures(DistillMethod):
     
 # class DistillFeatures(DistillMethod):
 #     """Feature-based distillation."""
-#     def __init__(self, hook_layers, loss, w, mode='mean', w_trainable=False):
-#         super(DistillFeatures, self).__init__(loss, w, w_trainable)
+#     def __init__(self, hook_layers, loss, w, mode='mean'):
+#         super(DistillFeatures, self).__init__(loss, w)
 #         assert mode in ['mean', 'sum'], "mode must be either 'mean' or 'sum'"
 #         self.mode = mode
 #         self.teacher_features = {}

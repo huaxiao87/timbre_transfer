@@ -134,8 +134,8 @@ class DistillationModule(LightningModule):
         # Compute forward pass
         x_hat = self.model(x)
         # Compute reconstruction loss
-        rec_loss = self.w_rec * self.rec_loss(x["audio"], x_hat["synth_audio"])
-        return rec_loss, rec_loss, {}
+        rec_loss = self.rec_loss(x["audio"], x_hat["synth_audio"])
+        return self.w_rec*rec_loss, rec_loss, {}
     
     def _model_step_kd(self, batch: Any):
         x = batch

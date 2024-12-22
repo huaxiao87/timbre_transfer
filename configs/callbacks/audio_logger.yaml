@@ -1,0 +1,4 @@
+audio_logger:
+  _target_: src.callbacks.audio_logger.AudioLogger
+  batch_frequency: 1
+  sr: 16000

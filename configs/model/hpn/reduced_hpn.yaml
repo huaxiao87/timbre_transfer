@@ -1,0 +1,14 @@
+_target_: src.models.ddsp_decoder.DDSP_Decoder
+decoder:
+  _target_: src.models.decoder.hpn_decoder.HpNdecoder
+  hidden_size: 16
+  num_layers: 1
+  input_keys: ['f0_scaled','loudness_scaled']
+  input_sizes: [1,1]
+  output_keys: ['amplitude','harmonic_distribution','noise_bands']
+  output_sizes: [1,100,65]
+synth:
+  _target_: src.models.synths.hpn_synth.HpNsynth
+  sample_rate: 16000
+  block_size: 64
+  reverb_scale: 1

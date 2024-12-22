@@ -8,6 +8,7 @@ from lightning.pytorch.loggers import Logger
 from lightning import seed_everything
 from omegaconf import DictConfig
 from torch.nn import Module
+import OmegaConf
 
 pyrootutils.setup_root(__file__, indicator=".project-root", pythonpath=True)
 # ------------------------------------------------------------------------------------ #
@@ -63,14 +64,15 @@ def train(cfg: DictConfig) -> Tuple[dict, dict]:
     kd_methods: List[DistillMethod] = utils.instantiate_distillation_methods(cfg.get("distillation"))
     
     if kd_methods:
-        teacher = hydra.utils.instantiate(cfg.task.teacher.model)
-        path = cfg.task.teacher.path
+        teacher_cfg = OmegaConf.load(cfg.task.teacher.config_path)
+        teacher = hydra.utils.instantiate(teacher_cfg)
+        teacher_path = cfg.task.teacher.ckpt_path
     else:
         teacher = None
-        path = None
+        teacher_path = None
     
     log.info(f"Instantiating lightningmodule <{cfg.task._target_}>")
-    pl_module: LightningModule = hydra.utils.instantiate(cfg.task, model=model, kd_methods=kd_methods, teacher=teacher, teacher_path=path)
+    pl_module: LightningModule = hydra.utils.instantiate(cfg.task, model=model, kd_methods=kd_methods, teacher=teacher, teacher_path=teacher_path)
 
     log.info("Instantiating callbacks...")
     callbacks: List[Callback] = utils.instantiate_callbacks(cfg.get("callbacks"),

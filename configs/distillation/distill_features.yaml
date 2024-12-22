@@ -1,0 +1,10 @@
+distill_features:
+  _target_: src.distillation.distillation_methods.DistillFeatures
+  _convert_: 'all'
+  hook_layers: ['decoder.gru']
+  align_features: [[-1, [16,512]]] #[[[512,64], [16,64]]]
+  loss:  
+    _target_: torch.nn.MSELoss
+  mode: 'mean'
+  w: 1.0
+  w_trainable: False

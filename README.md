@@ -27,7 +27,20 @@ ______________________________________________________________________
 
 ## Installation
 
+### Conda with environment.yaml
+*NOTE:* the venv create this way can contain also unnecesary packages
+```bash
+# Clone project
+git clone https://github.com/gregogiudici/distlling-ddsp.git
+cd distilling-ddsp
+
+# Create conda environment
+conda env create -f environment.yaml
+conda activate myenv
+```
+
 #### Conda + Pip
+If you would like to create a minimal environment, instead create it from scratch with conda, and then install the other packages with pip.
 
 ```bash
 # Clone project
@@ -37,7 +50,7 @@ cd distilling-ddsp
 # Create conda environment
 conda create -n myenv python=3.9
 conda activate myenv
-conda install pytorch==1.13.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia
+conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=12.1 -c pytorch -c nvidia
 # Some care may be needed to make compatible the library versions of torch, torchaudio, etc
 
 # Install requirements

@@ -1,0 +1,8 @@
+distill_control:
+  _target_: src.distillation.distillation_methods.DistillControl
+  params: ['amplitude','harmonic_distribution','noise_bands']
+  loss:  
+    _target_: torch.nn.L1Loss
+  mode: 'sum'
+  w: 1.0
+  w_trainable: False

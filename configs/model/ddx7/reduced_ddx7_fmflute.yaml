@@ -1,0 +1,18 @@
+_target_: src.models.ddsp_decoder.DDSP_Decoder
+decoder:
+  _target_: src.models.decoder.ddx7_decoder.FMdecoder
+  n_blocks: 3
+  hidden_channels: 64
+  out_channels: 6
+  kernel_size: 3
+  dilation_base: 2
+  apply_padding: True
+  deploy_residual: True
+  input_keys: ['f0_scaled','loudness_scaled']
+synth:
+  _target_: src.models.synths.ddx7_synth.FMsynth
+  sample_rate: 16000
+  block_size: 64
+  max_ol: 0.32       #max_ol is specified in multiples of 2*pi
+  fr: [1, 1, 1, 2, 2, 1.5]
+  synth_module: fmflute
