@@ -25,10 +25,11 @@ ______________________________________________________________________
 
 
 
-## Installation
+## CLONE AND VENV
+It is reccomended to install this repo on a virtual environment. We suggest using **conda**.
 
-### Conda with environment.yaml
-*NOTE:* the venv create this way can contain also unnecesary packages
+#### Conda with environment.yaml
+*NOTE:* the venv create this way can contain also unnecesary packages.
 ```bash
 # Clone project
 git clone https://github.com/gregogiudici/distlling-ddsp.git
@@ -72,3 +73,4 @@ Please check the `dataset` directory for advanced options to process and build a
 cd dataset
 python create_data.py urmp.source_folder=/path/to/URMP/Dataset jazznet.source_folder=/path/to/Jazznet
 ```
+
