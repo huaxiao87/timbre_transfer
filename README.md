@@ -164,8 +164,12 @@ FULL_HPN_FLUTE="${ROOT}/logs/path/to/checkpoint/1999-12-31_00-00-00/checkpoints/
 python src/train.py experiment=hpn/reduced_hpn_flute
 
 ```
-### 4. Modify the train.yaml
-Modify *task* in [train.yaml](/configs/train.yaml) from *no_kd* to *distillation*. Make sure the [distillation.yaml](/configs/task/distillation.yaml) config file has the teacher variables for both the architecture and the checkpoint path correct
+### 4. MODIFY the yaml files:
+Modify *task* in [train.yaml](/configs/train.yaml) from *no_kd* to *distillation*. 
+
+Make sure the [distillation.yaml](/configs/task/distillation.yaml) has the correct teacher variables for both the architecture and the checkpoint path.
+
+Check the configuration of the distillation methods in [distillation](configs/distillation/) folder.
 
 ### 5. Train STUDENT *with* Knowledge Distillation
 ```bash

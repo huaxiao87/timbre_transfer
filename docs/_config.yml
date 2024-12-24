@@ -32,6 +32,7 @@ github_username: gregogiudici
 theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
+  - jekyll-latex
 markdown: kramdown
 
 # Exclude from processing.

@@ -1,6 +1,6 @@
 defaults:
   #- distill_audio.yaml
-  #- distill_params.yaml
+  #- distill_control.yaml
   #- distill_features.yaml
   - _self_
 
