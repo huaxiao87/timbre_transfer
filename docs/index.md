@@ -24,4 +24,6 @@ This paper investigates the feasibility of running neural audio generative model
 
 
 ## Supplemental Material
-- [Harmonic-plus-Noise]()
+- [Harmonic-plus-Noise](https://gregogiudici.github.io/distilling-ddsp/hpn/)
+- [DDX7](https://gregogiudici.github.io/distilling-ddsp/ddx7/)
+- [Wavetable](https://gregogiudici.github.io/distilling-ddsp/wavetable/)
