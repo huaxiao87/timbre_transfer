@@ -14,7 +14,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 <link rel="stylesheet" href="{{ site.baseurl}}/css/trackswitch.min.css" />
 
-#  Sound of DAFx Special Issue - 2025
+###  Sound of DAFx Special Issue - 2025
 
 Accompanying page with supplemental materials
 

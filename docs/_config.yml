@@ -20,9 +20,10 @@
 
 # Site settings
 title: >-
-  Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
+  Distilling-DDSP
 email: gregorio.giudici@unitn.it
-description: # Accompanying material for the paper "Distlling DDP: Exploring Real-Time Audio Generation on Embedded Systems".
+description: >-
+  Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
 baseurl: "/distilling-ddsp" # the subpath of your site, e.g. /blog
 url: http://gregogiudici.github.io # the base hostname & protocol for your site, e.g. http://example.com
 
