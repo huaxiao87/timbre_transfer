@@ -1,9 +1,3 @@
----
-layout: home
-title: >-
-    Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
----
-
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
 <script type="text/x-mathjax-config">
 	MathJax.Hub.Config({
