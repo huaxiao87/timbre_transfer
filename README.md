@@ -22,11 +22,19 @@ ______________________________________________________________________
 <!-- <a href="https://magenta.tensorflow.org/ddsp"><img alt="DDSP" src="https://img.shields.io/badge/DDSP-Magenta-792ee5"></a> -->
 
 ## Description
+#### Repository Structure:
 
+ * [configs](configs/): Contains configuration files for the project, utilizing Hydra for managing configurations.
+ * [dataset](dataset/): Includes code for generating and preprocessing datasets required for training and evaluation.
+ * [docs](docs/): Documentation for the project's webpage, providing detailed information and guides.
+ * [metrics](metrics/): Contains metrics used to analyze both audio quality and real-time embeddability of the models.
+ * [src](src/): The source code for the project, including implementations for training, evaluation, and real-time audio synthesis.
+
+This repository contains the implementation of the paper "Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems." The project focuses on distilling the Differentiable Digital Signal Processing (DDSP) framework to enable real-time audio generation on resource-constrained embedded systems. 
 
 
 ### Get Started
-It is reccomended to install this repo on a virtual environment. We suggest using **conda**.
+It is recommended to install this repo on a virtual environment. We suggest using **conda**.
 
 #### Conda with environment.yaml
 *NOTE:* the venv create this way can contain also unnecesary packages.
