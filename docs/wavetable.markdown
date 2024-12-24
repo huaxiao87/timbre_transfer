@@ -34,13 +34,13 @@ permalink: /wavetable/
     <td>🪈 Flute</td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}docs/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}docs/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -49,13 +49,13 @@ permalink: /wavetable/
     <td>🎺 Trumpet</td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}docs/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}docs/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -64,13 +64,13 @@ permalink: /wavetable/
     <td>🎻 Violin</td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}docs/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}docs/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -79,13 +79,13 @@ permalink: /wavetable/
     <td>🎹 Piano</td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}docs/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}docs/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
