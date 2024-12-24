@@ -1,3 +1,9 @@
+---
+layout: home
+title: >-
+    Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
+---
+
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
 <script type="text/x-mathjax-config">
 	MathJax.Hub.Config({
@@ -14,205 +20,14 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 <link rel="stylesheet" href="{{ site.baseurl}}/css/trackswitch.min.css" />
 
+#  Sound of DAFx Special Issue - 2025
+
+Accompanying page with supplemental materials
 
 
-
-    
-# Supplemental Material
-
-
-## Audio Examples
-
-<table>
-  <tr>
-    <th></th>
-    <th style="text-align: center;">Reference</th>
-    <th style="text-align: center;">Anchor (LPC)</th>
-  </tr>
-  <tr>
-    <td>🪈 Flute</td>
-    <td>
-      <audio controls style="width: 150px; height: 30px;">
-        <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
-        Your browser does not support the audio tag.
-      </audio>
-    </td>
-    <td>
-      <audio controls style="width: 150px; height: 30px;">
-        <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
-        Your browser does not support the audio tag.
-      </audio>
-    </td>
-  </tr>
-  <tr>
-    <td>🎺 Trumpet</td>
-    <td>
-      <audio controls style="width: 150px; height: 30px;">
-        <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
-        Your browser does not support the audio tag.
-      </audio>
-    </td>
-    <td>
-      <audio controls style="width: 150px; height: 30px;">
-        <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
-        Your browser does not support the audio tag.
-      </audio>
-    </td>
-  </tr>
-  <tr>
-    <td>🎻 Violin</td>
-    <td>
-      <audio controls style="width: 150px; height: 30px;">
-        <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
-        Your browser does not support the audio tag.
-      </audio>
-    </td>
-    <td>
-      <audio controls style="width: 150px; height: 30px;">
-        <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
-        Your browser does not support the audio tag.
-      </audio>
-    </td>
-  </tr>
-  <tr>
-    <td>🎹 Piano</td>
-    <td>
-      <audio controls style="width: 150px; height: 30px;">
-        <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
-        Your browser does not support the audio tag.
-      </audio>
-    </td>
-    <td>
-      <audio controls style="width: 150px; height: 30px;">
-        <source src="{{ site.baseurl}}/examples/sounds/ism.wav" type="audio/mpeg">
-        Your browser does not support the audio tag.
-      </audio>
-    </td>
-  </tr>
-</table> 
-
-### Harmonic-plus-Noise
-<table>
-  <tr>
-    <th></th>
-    <th style="text-align: center;">🎵 Flute</th>
-    <th style="text-align: center;">🎺 Trumpet</th>
-    <th style="text-align: center;">🎻 Violin</th>
-    <th style="text-align: center;">🎹 Piano</th>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Full</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_full_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_full_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_full_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_full_hp.wav" type="audio/mpeg"></audio></td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Reduced</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_hp.wav" type="audio/mpeg"></audio></td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Reduced + AD</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ad_hp.wav" type="audio/mpeg"></audio></td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Reduced + CD</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_cd_hp.wav" type="audio/mpeg"></audio></td>
-  </tr>
-</table>
-
-### DDX7
-<table>
-  <tr>
-    <th></th>
-    <th style="text-align: center;">🎵 Flute</th>
-    <th style="text-align: center;">🎺 Trumpet</th>
-    <th style="text-align: center;">🎻 Violin</th>
-    <th style="text-align: center;">🎹 Piano</th>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Full</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_full_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_full_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_full_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_full_ddx7.wav" type="audio/mpeg"></audio></td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Reduced</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ddx7.wav" type="audio/mpeg"></audio></td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Reduced + AD</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ad_ddx7.wav" type="audio/mpeg"></audio></td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Reduced + CD</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_cd_ddx7.wav" type="audio/mpeg"></audio></td>
-  </tr>
-</table>
-
-### Wavetable
-<table>
-  <tr>
-    <th></th>
-    <th style="text-align: center;">🎵 Flute</th>
-    <th style="text-align: center;">🎺 Trumpet</th>
-    <th style="text-align: center;">🎻 Violin</th>
-    <th style="text-align: center;">🎹 Piano</th>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Full</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_full_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_full_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_full_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_full_wt.wav" type="audio/mpeg"></audio></td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Reduced</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_wt.wav" type="audio/mpeg"></audio></td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Reduced + AD</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_ad_wt.wav" type="audio/mpeg"></audio></td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Reduced + CD</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_cd_wt.wav" type="audio/mpeg"></audio></td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">Reduced w/ Prt + CD</td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/flute_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/trumpet_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/violin_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
-    <td style="text-align: center;"><audio controls style="width: 150px; height: 30px;"><source src="{{ site.baseurl}}/examples/sounds/piano_reduced_prt_cd_wt.wav" type="audio/mpeg"></audio></td>
-  </tr>
-</table>
+## Abstract
+This paper investigates the feasibility of running neural audio generative models on embedded systems, by comparing the performance of various models and evaluating their trade-offs in audio quality, inference speed, and memory usage. We focus on Differentiable Digital Signal Processing (DDSP) models, due to their hybrid architecture, which combines the efficiency and interoperability of traditional DSP with the flexibility of neural networks. In addition, we explore the application of Knowledge Distillation (KD) to improve the performance of smaller models. We implemented and evaluated two types of distillation strategies: audio distillation and control distillation. We applied these methods to three foundation DDSP generative models which integrate Harmonic-plus-Noise, FM, and Wavetable synthesis. Our results demonstrate the overall effectiveness of KD: we were able to train student models that are up to a hundred times smaller than their teacher counterparts, while maintaining comparable performance and significantly improving inference speed and memory efficiency. However, we have also observed cases where KD failed to improve or even degrade student performance. We provide a critical reflection on the advantages and limitations of KD, exploring its application in diverse use cases, and emphasizing the need for carefully tailored strategies to maximize its potential.
 
 
+## Supplemental Material
+- [Harmonic-plus-Noise]()
