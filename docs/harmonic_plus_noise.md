@@ -8,6 +8,7 @@ permalink: /hpn/
 <script src="{{ site.baseurl }}/js/trackswitch.min.js"></script>
 <link rel="stylesheet" href="{{ site.baseurl }}/css/trackswitch.min.css">
 
+
 # Harmonic-plus-Noise
 
 ## Audio Examples
@@ -137,7 +138,6 @@ permalink: /hpn/
 </table>
 
 <script>
-  // Initialize the audio plugin for each audio component
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.jquery-trackswitch').forEach(function (element) {
       $(element).Plugin();
