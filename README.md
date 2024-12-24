@@ -83,3 +83,95 @@ python create_data.py urmp.source_folder=/path/to/URMP/Dataset jazznet.source_fo
 ```
 
 ## Training
+#### Train with default configuration:
+- model: hpn-full
+- dataset: flute
+- task: no_kd 
+```bash
+# Train with accelerator=auto (CPU, GPU, DDP, etc)
+python src/train.py
+
+# Train on CPU
+python src/train.py trainer=cpu
+
+# Train on GPU
+python src/train.py trainer=gpu
+```
+
+#### Train a different model
+```bash
+# Train HpN-full (default) with Flute (default)
+# dataset: sr=16kHz, fr=250
+python src/train.py #model=hpn/full_hpn
+
+# Train HpN-reduced
+python src/train.py model=hpn/reduced_hpn
+
+# Train DDX7-full
+python src/train.py model=ddx7/full_ddx7_fmflute
+
+# Train Wavetable-full
+python src/train.py model=wavetable/full_wavetable
+
+```
+#### Train with a different instrument
+
+```bash
+# Train HpN-full (default) with Flute (default)
+# dataset: sr=16kHz, fr=250
+python src/train.py #data=flute_16000_250
+
+# Train HpN-full (default) with Violin
+python src/train.py data=violin_16000_250 
+
+# Train HpN-full (default) with Trumpet
+python src/train.py data=trumpet_16000_250
+```
+
+You can override any parameter from command-line, like this
+
+```bash
+python src/train.py trainer.max_epochs=5000 data.batch_size=64 data=violin_16000_250 
+```
+
+
+
+## Knowledge Distillation
+To apply the Knowledge Distillation, you have to follow these steps:
+
+### 1. Train TEACHER 
+
+```bash
+# Example:
+#       dimension: full
+#       model: HpN
+#       instrument: flute
+python src/train.py experiment=hpn/full_hpn_flute
+```
+### 2. Add TEACHER checkpoint to your example.env file
+This is necessary for the distillation framework since you have to indicate where the pre-trained teacher model is located.
+```bash
+FULL_HPN_FLUTE="${ROOT}/logs/path/to/checkpoint/1999-12-31_00-00-00/checkpoints/epoch_000.ckpt"
+
+```
+
+### 3. Train STUDENT *without* Knowledge Distillation
+```bash
+# Experiment: 
+#       dimension: reduced
+#       model: HpN
+#       instrument: flute
+python src/train.py experiment=hpn/reduced_hpn_flute
+
+```
+### 4. Modify the train.yaml
+Modify *task* in [train.yaml](/configs/train.yaml) from *no_kd* to *distillation*. Make sure the [distillation.yaml](/configs/task/distillation.yaml) config file has the teacher variables for both the architecture and the checkpoint path correct
+
+### 5. Train STUDENT *with* Knowledge Distillation
+```bash
+# Experiment: 
+#       dimension: reduced
+#       model: HpN
+#       instrument: flute
+python src/distillation.py experiment=hpn/reduced_hpn_flute
+```
