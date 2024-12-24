@@ -24,17 +24,17 @@ ______________________________________________________________________
 ## Description
 #### Repository Structure:
 
- * [configs](configs/): Contains configuration files for the project, utilizing Hydra for managing configurations.
- * [dataset](dataset/): Includes code for generating and preprocessing datasets required for training and evaluation.
- * [docs](docs/): Documentation for the project's webpage, providing detailed information and guides.
+ * [configs](configs/): Contains configuration files for the project. This projects uses. This project uses [hydra](https://hydra.cc/) to personalize dataset generation, and build and train models. It is reccomended to take a look at the available options in yaml files before processing a dataset or training a model.
+ * [dataset](dataset/): Includes code for generating and preprocessing datasets.
+ * [docs](docs/): Documentation for the project's webpage.
  * [metrics](metrics/): Contains metrics used to analyze both audio quality and real-time embeddability of the models.
- * [src](src/): The source code for the project, including implementations for training, evaluation, and real-time audio synthesis.
+ * [src](src/): The source code for the project, including implementations for training, evaluation, and the DDSP models.
 
-This repository contains the implementation of the paper "Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems." The project focuses on distilling the Differentiable Digital Signal Processing (DDSP) framework to enable real-time audio generation on resource-constrained embedded systems. 
+This repository contains the code of the paper "Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems.". 
 
 
 ### Get Started
-It is recommended to install this repo on a virtual environment. We suggest using **conda**.
+It is recommended to use a virtual environment. We suggest using **conda**.
 
 #### Conda with environment.yaml
 *NOTE:* the venv create this way can contain also unnecesary packages.
@@ -82,3 +82,4 @@ cd dataset
 python create_data.py urmp.source_folder=/path/to/URMP/Dataset jazznet.source_folder=/path/to/Jazznet
 ```
 
+## Training
