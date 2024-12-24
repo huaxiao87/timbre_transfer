@@ -25,7 +25,7 @@ ______________________________________________________________________
 
 
 
-## CLONE AND VENV
+### Get Started
 It is reccomended to install this repo on a virtual environment. We suggest using **conda**.
 
 #### Conda with environment.yaml
