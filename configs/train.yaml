@@ -8,7 +8,7 @@ defaults:
   - distillation: no_kd.yaml # default.yaml
   - callbacks: default.yaml
   - logger: wandb.yml # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
-  - model: wavetable/full_hpn.yaml #ddsp/small_hpn.yaml
+  - model: hpn/full_hpn.yaml #ddsp/small_hpn.yaml
   - task: no_kd.yaml
   - trainer: default.yaml
   - paths: default.yaml
