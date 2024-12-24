@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: >-
     Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
 permalink: /ddx7/

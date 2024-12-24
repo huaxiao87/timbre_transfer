@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 title: >-
     Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
 permalink: /hpn/
