@@ -155,19 +155,19 @@ In addition, the values stored in the tables are learned as well during the trai
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/flute_1_wave_student_KD_audio.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/flute_1_wave_KD_audio.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/flute_1_wave_student_KD_params.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/flute_1_wave_KD_params.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/flute_1_wave_student_KD_params_FIXED.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/flute_1_wave_KD_params_FIXED.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -188,19 +188,19 @@ In addition, the values stored in the tables are learned as well during the trai
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/trumpet_1_wave_student_KD_audio.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/trumpet_1_wave_KD_audio.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/trumpet_1_wave_student_KD_params.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/trumpet_1_wave_KD_params.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/trumpet_1_wave_student_KD_params_FIXED.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/trumpet_1_wave_KD_params_FIXED.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -221,19 +221,19 @@ In addition, the values stored in the tables are learned as well during the trai
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/violin_1_wave_student_KD_audio.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/violin_1_wave_KD_audio.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/violin_1_wave_student_KD_params.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/violin_1_wave_KD_params.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/violin_1_wave_student_KD_params_FIXED.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/violin_1_wave_KD_params_FIXED.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -254,19 +254,19 @@ In addition, the values stored in the tables are learned as well during the trai
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/piano_1_wave_student_KD_audio.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/piano_1_wave_KD_audio.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/piano_1_wave_student_KD_params.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/piano_1_wave_KD_params.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/wave/piano_1_wave_student_KD_params_FIXED.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/wave/piano_1_wave_KD_params_FIXED.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>

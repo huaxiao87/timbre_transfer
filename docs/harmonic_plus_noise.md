@@ -23,7 +23,7 @@ Harmonic-plus-Noise synthesis decomposes an audio signal into two complementary 
 A signal $x[n]$ is expressed as:
 
 $
-x[n] = \underbrace{\sum_{k=1}^N A_k[n] \sin\left(2\pi f_k[n] n T + \phi_k[n]\right)}_{\text{Harmonic Component}} + \underbrace{e[n]}_{\text{Noise Component}}
+x[n] = \sum_{k=1}^N A_k[n] \sin\left(2\pi f_k[n] n T + \phi_k[n]\right) + e[n]
 $
 
 Where $T$ is the sampling period, $N$ is the number of harmonics, while $A_k[n]$, $f_k[n]$, and $\phi_k[n]$ are respectively the amplitude, frequency, and phase of the $k$-th harmonic.
@@ -150,13 +150,13 @@ The HpN architecture employs a decoder, formed of recurrent and fully connected 
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/hpn/flute_1_hpn_student_KD_audio.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/hpn/flute_1_hpn_KD_audio.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/hpn/flute_1_hpn_student_KD_params.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/hpn/flute_1_hpn_KD_params.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -177,13 +177,13 @@ The HpN architecture employs a decoder, formed of recurrent and fully connected 
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/hpn/trumpet_1_hpn_student_KD_audio.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/hpn/trumpet_1_hpn_KD_audio.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/hpn/trumpet_1_hpn_student_KD_params.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/hpn/trumpet_1_hpn_KD_params.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -204,13 +204,13 @@ The HpN architecture employs a decoder, formed of recurrent and fully connected 
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/hpn/violin_1_hpn_student_KD_audio.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/hpn/violin_1_hpn_KD_audio.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/hpn/violin_1_hpn_student_KD_params.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/hpn/violin_1_hpn_KD_params.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -231,13 +231,13 @@ The HpN architecture employs a decoder, formed of recurrent and fully connected 
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/hpn/piano_1_hpn_student_KD_audio.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/hpn/piano_1_hpn_KD_audio.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/hpn/piano_1_hpn_student_KD_params.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/hpn/piano_1_hpn_KD_params.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
