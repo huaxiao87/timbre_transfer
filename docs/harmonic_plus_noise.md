@@ -23,7 +23,7 @@ Harmonic-plus-Noise synthesis decomposes an audio signal into two complementary 
 A signal $x[n]$ is expressed as:
 
 $
-x[n] = \sum_{k=1}^N A_k[n] \sin\left(2\pi f_k[n] n T + \phi_k[n]\right) + e[n]
+x[n] = e[n] + \sum_{k=1}^N A_k[n] \sin\left(2\pi f_k[n] n T + \phi_k[n]\right) 
 $
 
 Where $T$ is the sampling period, $N$ is the number of harmonics, while $A_k[n]$, $f_k[n]$, and $\phi_k[n]$ are respectively the amplitude, frequency, and phase of the $k$-th harmonic.
