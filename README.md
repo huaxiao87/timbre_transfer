@@ -40,7 +40,7 @@ It is recommended to use a virtual environment. We suggest using **conda**.
 *NOTE:* the venv create this way can contain also unnecesary packages.
 ```bash
 # Clone project
-git clone https://github.com/gregogiudici/distlling-ddsp.git
+git clone https://github.com/gregogiudici/distilling-ddsp.git
 cd distilling-ddsp
 
 # Create conda environment

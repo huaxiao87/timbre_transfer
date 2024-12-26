@@ -40,7 +40,9 @@ Where $A_k[n]$ is the amplitude of the $k$-th wavetable oscillator, and $M$ is t
 Wavetable synthesis is a staple in digital synthesizers thanks to its dynamic sound design capabilities, versatility, and ease of use.
 
 ## DDSP Implementation
-
+![DDSP Implementation Diagram](misc/images/wavetable_architecture.png)
+The Wavetable architecture employs a decoder, formed of recurrent and fully connected layers, conditioned on a sequence of pitch ($f_0$) and loudness ($L$) frames to predict the overall amplitude of the audio signal ($A$), the amplitude of each wavetable oscillator used to for mixing the various contributions ($a_k$), and the coefficients of the filter used to model the noise component ($h$).
+In addition, the values stored in the tables are learned as well during the training.
 
 ## Audio Examples
 
@@ -69,7 +71,7 @@ Wavetable synthesis is a staple in digital synthesizers thanks to its dynamic so
     <td>🪈 Flute</td>
     <td>
       <audio controls>
-        <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+        <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_reference.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -84,13 +86,13 @@ Wavetable synthesis is a staple in digital synthesizers thanks to its dynamic so
     <td>🎺 Trumpet</td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/trumpet_1_reference.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/trumpet_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -99,13 +101,13 @@ Wavetable synthesis is a staple in digital synthesizers thanks to its dynamic so
     <td>🎻 Violin</td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/violin_1_reference.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/violin_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
@@ -114,17 +116,159 @@ Wavetable synthesis is a staple in digital synthesizers thanks to its dynamic so
     <td>🎹 Piano</td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/piano_1_reference.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
     <td>
       <audio controls style="width: 150px; height: 30px;">
-         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/flute_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
+         <source src="{{ site.baseurl }}/misc/audio/ref_anchor/piano_1_anchor_p10_w800_srcimpulse.wav" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </td>
   </tr>
 </table>
-
 ### Wavetable
+
+<table>
+  <tr>
+    <th></th>
+    <th style="text-align: center;">Full</th>
+    <th style="text-align: center;">Reduced</th>
+    <th style="text-align: center;">Reduced+AD</th>
+    <th style="text-align: center;">Reduced+CD</th>
+    <th style="text-align: center;">Reduced(w/prt)+CD</th>
+  </tr>
+  <tr>
+    <td>🪈 Flute</td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/flute_1_wave_teacher.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/flute_1_wave_student.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/flute_1_wave_student_KD_audio.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/flute_1_wave_student_KD_params.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/flute_1_wave_student_KD_params_FIXED.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+  </tr>
+  <tr>
+    <td>🎺 Trumpet</td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/trumpet_1_wave_teacher.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/trumpet_1_wave_student.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/trumpet_1_wave_student_KD_audio.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/trumpet_1_wave_student_KD_params.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/trumpet_1_wave_student_KD_params_FIXED.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+  </tr>
+  <tr>
+    <td>🎻 Violin</td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/violin_1_wave_teacher.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/violin_1_wave_student.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/violin_1_wave_student_KD_audio.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/violin_1_wave_student_KD_params.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/violin_1_wave_student_KD_params_FIXED.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+  </tr>
+  <tr>
+    <td>🎹 Piano</td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/piano_1_wave_teacher.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/piano_1_wave_student.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/piano_1_wave_student_KD_audio.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/piano_1_wave_student_KD_params.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+        <source src="{{ site.baseurl }}/misc/audio/wave/piano_1_wave_student_KD_params_FIXED.wav" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </td>
+  </tr>
+</table>
