@@ -1,13 +1,13 @@
 ______________________________________________________________________
 
 <div align="center">
-
+ 
 # Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems
+### **[Paper📜](https://aes2.org/publications/elibrary-page/?id=22916)** - **[Audio examples🎵](https://gregogiudici.github.io/distilling-ddsp)**  
+<!-- <i>(with audio samples and more)</i> -->
 #### Gregorio Andrea Giudici - Franco Caspe - Leonardo Gabrielli - Stefano Squartini - Luca Turchet
 <!--<span style="font-size: 20px;"><b>[>>website<<](https://gregogiudici.github.io/distilling-ddsp)</b></span><br>-->
 <!--<i>(with audio samples and more)</i>-->
-### 🎵🎧 **[>>Website<<](https://gregogiudici.github.io/distilling-ddsp)** 🎧🎵  
-<i>(with audio samples and more)</i>
 
 
 <center>
@@ -22,19 +22,17 @@ ______________________________________________________________________
 <!-- <a href="https://magenta.tensorflow.org/ddsp"><img alt="DDSP" src="https://img.shields.io/badge/DDSP-Magenta-792ee5"></a> -->
 
 ## Description
+This repository contains the code of the paper *"Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems."* 
 #### Repository Structure:
 
- * [configs](configs/): Contains configuration files for the project. This projects uses. This project uses [hydra](https://hydra.cc/) to personalize dataset generation, and build and train models. It is reccomended to take a look at the available options in yaml files before processing a dataset or training a model.
- * [dataset](dataset/): Includes code for generating and preprocessing datasets.
- * [docs](docs/): Documentation for the project's webpage.
- * [metrics](metrics/): Contains metrics used to analyze both audio quality and real-time embeddability of the models.
- * [src](src/): The source code for the project, including implementations for training, evaluation, and the DDSP models.
-
-This repository contains the code of the paper "Distilling DDSP: Exploring Real-Time Audio Generation on Embedded Systems.". 
-
+ * [**configs**](configs/): Contains configuration files for the project. This projects uses. This project uses [hydra](https://hydra.cc/) to personalize dataset generation, and build and train models. It is recommended to take a look at the available options in yaml files before processing a dataset or training a model.
+ * [**dataset**](dataset/): Includes code for generating and preprocessing datasets.
+ * [**docs**](docs/): Documentation for the project's webpage.
+ * [**metrics**](metrics/): Contains metrics used to analyze both audio quality and real-time embeddability of the models.
+ * [**src**](src/): The source code for the project, including implementations for training, evaluation, and the DDSP models.
 
 ### Get Started
-It is recommended to use a virtual environment. We suggest using **conda**.
+It is recommended to use a virtual environment. We suggest using [**conda**](https://www.anaconda.com/docs/getting-started/miniconda/main).
 
 #### Conda with environment.yaml
 *NOTE:* the venv create this way can contain also unnecesary packages.
