@@ -46,9 +46,10 @@ class h5Dataset(Dataset):
         cache = {}
         keys = h5f.keys()
         nkeys = len(keys)
-        ndata = (len(keys)//nfeatures)
-        if((nkeys//nfeatures)*nfeatures != nkeys):
-            raise Exception("Unexpected dataset len.")
+        # 计算实际的数据项数量，考虑到每个数据项有 nfeatures + 1 个键（包括 file_id）
+        ndata = (len(keys)//(nfeatures + 1))
+        if((nkeys//(nfeatures + 1))*(nfeatures + 1) != nkeys):
+            raise Exception(f"Unexpected dataset len. {nkeys} {nfeatures + 1}")
 
         for key in keys:
             cache[key] = np.array(h5f[key])

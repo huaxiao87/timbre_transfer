@@ -6,9 +6,8 @@ import torch
 from lightning.pytorch import Callback, LightningDataModule, LightningModule, Trainer
 from lightning.pytorch.loggers import Logger
 from lightning import seed_everything
-from omegaconf import DictConfig
+from omegaconf import DictConfig, OmegaConf
 from torch.nn import Module
-import OmegaConf
 
 pyrootutils.setup_root(__file__, indicator=".project-root", pythonpath=True)
 # ------------------------------------------------------------------------------------ #

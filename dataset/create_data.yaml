@@ -56,8 +56,8 @@ hydra:
   run:
     dir: outputs/null
 
-process_urmp: False      # Process URMP.
+process_urmp: True      # Process URMP.
 process_testset: False  # Process additional testset.
-process_jazznet: True   # Process Jazznet.
+process_jazznet: False   # Process Jazznet.
 skip_copy: False        # Skip file copying (if you have already done so)
 skip_process: False     # Dry run.

@@ -8,7 +8,7 @@ from shutil import copyfile
 import torch
 import numpy as np
 import h5py
-from spectral_ops import calc_loudness, calc_f0, calc_power
+from ddx7.spectral_ops import calc_loudness, calc_f0, calc_power
 import operator
 import functools
 import json
