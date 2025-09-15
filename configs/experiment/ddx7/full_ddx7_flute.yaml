@@ -5,7 +5,7 @@
 
 defaults:
   - override /data: flute_16000_250.yaml
-  - override /model: ddx7/full_ddx7.yaml
+  - override /model: ddx7/full_ddx7_fmflute.yaml
   - override /logger: wandb.yaml
   - override /callbacks: default.yaml
   - override /trainer: default.yaml
