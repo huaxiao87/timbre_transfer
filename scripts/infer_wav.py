@@ -6,10 +6,20 @@ import numpy as np
 import soundfile as sf
 import torch
 import librosa
-import torchcrepe
 from omegaconf import OmegaConf
 import hydra
 import pyrootutils
+
+try:
+    import torchcrepe
+except Exception:
+    torchcrepe = None
+
+try:
+    from ddx7.spectral_ops import calc_loudness as ddx7_calc_loudness, calc_f0 as ddx7_calc_f0
+except Exception:
+    ddx7_calc_loudness = None
+    ddx7_calc_f0 = None
 
 
 # Ensure project root is on PYTHONPATH for `src` imports and Hydra targets
@@ -34,6 +44,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--sample_rate", type=int, default=16000, help="Target sample rate")
     parser.add_argument("--frame_rate", type=int, default=250, help="Feature frame rate (frames per second)")
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
+    # Pitch extraction options
+    parser.add_argument("--pitch_method", type=str, choices=["ddx7", "torchcrepe"], default="ddx7",
+                        help="Use ddx7.spectral_ops (recommended) or torchcrepe")
+    parser.add_argument("--fmin", type=float, default=50.0)
+    parser.add_argument("--fmax", type=float, default=1200.0)
+    parser.add_argument("--crepe_model", type=str, default="full", choices=["full", "tiny"])
+    parser.add_argument("--periodicity_threshold", type=float, default=0.2,
+                        help="For torchcrepe: zero-out f0 where periodicity < threshold")
     return parser.parse_args()
 
 
@@ -43,44 +61,83 @@ def hz_to_midi_torch(frequencies: torch.Tensor) -> torch.Tensor:
     return notes
 
 
-def extract_features(
+def extract_features_ddx7(
     y: np.ndarray,
     sample_rate: int,
     frame_rate: int,
+    fmin: float,
+    fmax: float,
+    crepe_model: str,
     device: torch.device,
 ) -> Tuple[torch.Tensor, torch.Tensor]:
-    """Compute f0 (Hz) with torchcrepe and loudness (dB) with librosa RMS.
+    assert ddx7_calc_f0 is not None and ddx7_calc_loudness is not None, "ddx7.spectral_ops is not available"
+    hop_length = sample_rate // frame_rate
+    # ddx7 f0 returns (f0, confidence)
+    f0_np, conf_np = ddx7_calc_f0(y, rate=sample_rate, hop_size=hop_length,
+                                  fmin=fmin, fmax=fmax, model=crepe_model,
+                                  batch_size=2048, device=device, center=True)
+    # Zero-out low confidence frames (match training behavior more closely)
+    conf_thr = 0.2
+    f0_np = np.where(conf_np < conf_thr, 0.0, f0_np)
 
-    Returns tensors shaped [T] for both features.
-    """
-    hop_length = sample_rate // frame_rate  # 16000/250 = 64
+    # Loudness
+    loudness_np = ddx7_calc_loudness(y, rate=sample_rate, n_fft=2048, hop_size=hop_length, center=True)
+    loudness_np = np.clip(loudness_np, -DB_RANGE, 0.0)
 
-    # f0 with torchcrepe
+    T = min(f0_np.shape[0], loudness_np.shape[0])
+    f0_np = f0_np[:T]
+    loudness_np = loudness_np[:T]
+    return torch.from_numpy(f0_np).float().to(device), torch.from_numpy(loudness_np).float().to(device)
+
+
+def extract_features_torchcrepe(
+    y: np.ndarray,
+    sample_rate: int,
+    frame_rate: int,
+    fmin: float,
+    fmax: float,
+    crepe_model: str,
+    periodicity_threshold: float,
+    device: torch.device,
+) -> Tuple[torch.Tensor, torch.Tensor]:
+    assert torchcrepe is not None, "torchcrepe is not installed"
+    hop_length = sample_rate // frame_rate
+
     audio_t = torch.from_numpy(y).float().to(device)
     if audio_t.ndim == 1:
         audio_t = audio_t.unsqueeze(0)  # [1, T]
-    f0_hz = torchcrepe.predict(
+    # Viterbi decoding improves continuity; request periodicity
+    f0_hz, periodicity = torchcrepe.predict(
         audio_t,
         sample_rate,
         hop_length,
-        fmin=50.0,
-        fmax=2000.0,
-        model="full",
+        fmin=fmin,
+        fmax=fmax,
+        model=crepe_model,
         batch_size=2048,
         device=device,
-        return_periodicity=False,
-    ).squeeze(0)  # [T]
+        decoder=torchcrepe.decode.viterbi,
+        return_periodicity=True,
+    )
+    f0_hz = f0_hz.squeeze(0)  # [T]
+    periodicity = periodicity.squeeze(0)
+    # Simple smoothing and thresholding
+    if hasattr(torchcrepe, "filter"):
+        try:
+            f0_hz = torchcrepe.filter.median(f0_hz, 3)
+            periodicity = torchcrepe.filter.mean(periodicity, 3)
+        except Exception:
+            pass
+    f0_hz = torch.where(periodicity >= periodicity_threshold, f0_hz, torch.zeros_like(f0_hz))
 
     # loudness via RMS -> dB in [-inf, 0], then clip to [-80, 0]
     rms = librosa.feature.rms(y=y, frame_length=2048, hop_length=hop_length, center=True).squeeze(0)
     loudness_db = librosa.amplitude_to_db(rms, ref=1.0)
     loudness_db = np.clip(loudness_db, -DB_RANGE, 0.0)
 
-    # align lengths (crepe and librosa can differ by 1 frame)
     T = min(f0_hz.shape[0], loudness_db.shape[0])
     f0_hz = f0_hz[:T]
     loudness_db = loudness_db[:T]
-
     return f0_hz.detach(), torch.from_numpy(loudness_db).float().to(device)
 
 
@@ -125,6 +182,11 @@ def run_inference(
     sample_rate: int,
     frame_rate: int,
     device_str: str,
+    pitch_method: str,
+    fmin: float,
+    fmax: float,
+    crepe_model: str,
+    periodicity_threshold: float,
 ):
     device = torch.device(device_str)
 
@@ -137,7 +199,37 @@ def run_inference(
     load_weights_into_model(model, ckpt_path, device)
 
     # Features
-    f0_hz, loudness_db = extract_features(y, sample_rate, frame_rate, device)
+    use_ddx7 = (pitch_method == "ddx7") and (ddx7_calc_f0 is not None and ddx7_calc_loudness is not None)
+    use_crepe = (pitch_method == "torchcrepe") and (torchcrepe is not None)
+
+    if not use_ddx7 and not use_crepe:
+        # fallback: prefer ddx7 if available else torchcrepe
+        use_ddx7 = ddx7_calc_f0 is not None and ddx7_calc_loudness is not None
+        use_crepe = not use_ddx7 and (torchcrepe is not None)
+
+    if use_ddx7:
+        f0_hz, loudness_db = extract_features_ddx7(
+            y=y,
+            sample_rate=sample_rate,
+            frame_rate=frame_rate,
+            fmin=fmin,
+            fmax=fmax,
+            crepe_model=crepe_model,
+            device=device,
+        )
+    elif use_crepe:
+        f0_hz, loudness_db = extract_features_torchcrepe(
+            y=y,
+            sample_rate=sample_rate,
+            frame_rate=frame_rate,
+            fmin=fmin,
+            fmax=fmax,
+            crepe_model=crepe_model,
+            periodicity_threshold=periodicity_threshold,
+            device=device,
+        )
+    else:
+        raise RuntimeError("Neither ddx7.spectral_ops nor torchcrepe are available for pitch extraction")
     f0_scaled, loudness_scaled = scale_features(f0_hz, loudness_db)
 
     # Pack inputs (B, T, 1)
@@ -168,6 +260,11 @@ def main():
         sample_rate=args.sample_rate,
         frame_rate=args.frame_rate,
         device_str=args.device,
+        pitch_method=args.pitch_method,
+        fmin=args.fmin,
+        fmax=args.fmax,
+        crepe_model=args.crepe_model,
+        periodicity_threshold=args.periodicity_threshold,
     )
 
 
