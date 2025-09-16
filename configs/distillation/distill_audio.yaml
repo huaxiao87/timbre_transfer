@@ -5,4 +5,3 @@ distill_audio:
      scales: [2048, 1024, 512, 256, 128, 64]
      overlap: 0.75
   w: 0.5
-  w_trainable: False
