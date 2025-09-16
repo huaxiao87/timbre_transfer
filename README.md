@@ -176,4 +176,7 @@ Check the configuration of the distillation methods in [distillation](configs/di
 #       model: HpN
 #       instrument: flute
 python src/distillation.py experiment=hpn/reduced_hpn_flute
+
+Shawn's note: use this command
+python src/train.py experiment=ddx7/reduced_ddx7_flute task=distillation.yaml distillation=distill_audio.yaml task.teacher.config_path=/home/huaxiao/distilling-ddsp/configs/model/hpn/full_hpn.yaml task.teacher.ckpt_path=/home/huaxiao/distilling-ddsp/logs/ddx7/runs/2025-09-14_22-43-53/checkpoints/epoch_22608.ckpt
 ```
